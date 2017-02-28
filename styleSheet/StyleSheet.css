@@ -1,0 +1,84 @@
+﻿body 
+{
+}
+.divForText
+{
+    position: absolute;
+    z-index: inherit;
+
+}
+#contenedor
+{
+    width: 100%;
+    height:16px;   
+}
+#diploma
+{
+    position:absolute;
+    width:1240px;
+    height:915px;
+    margin: 0 auto 0 auto;
+    top: 9px;
+    left: 50px;
+    z-index:10;
+}
+.titulo{
+    position:absolute;
+    width:560px;
+    height:20px;
+    top: 293px;
+    left: 484px;
+    margin-top: 0px;
+    z-index:100;
+}
+.titulo2{
+    position:absolute;
+    width:560px;
+    height:35px;
+    top: 393px;
+    left: 488px;
+    margin-top: 0px;
+    z-index:100;
+}
+.titulo3{
+    position:absolute;
+    width:560px;
+    height:35px;
+    top: 486px;
+    left: 488px;
+    margin-top: 0px;
+    z-index:100;
+
+}
+.titulo4{
+    position:absolute;
+    width:560px;
+    height:35px;
+    top: 573px;
+    left: 491px;
+    margin-top: 0px;
+    z-index:100;
+    bottom: 307px;
+}
+.codigoDiploma
+{
+    position:absolute;
+    width:280px;
+    height:20px;
+    top: 668px;
+    left: 558px;
+    margin-top: 0px;
+}
+#footer 
+{
+display: none;
+}
+ .nomEstudiante
+ {
+   font-style:normal;
+   font-weight:lighter;
+   font-size:45px;  
+ } 
+.fuente{
+font-size:35px;
+}

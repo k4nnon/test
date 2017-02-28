@@ -1,0 +1,83 @@
+﻿body {
+background:url('Diploma_Sistema_chico.jpg') no-repeat-webkit-print-color-adjust:exact;
+}
+@media print {
+body 
+{
+   content:url('Diploma_Sistema_chico.jpg');
+  }
+}
+.divForText
+{
+    position: absolute;
+    z-index: inherit;
+
+}
+#contenedor
+{
+    width: 100%;
+    height:auto;   
+}
+#diploma
+{
+    position:relative;
+    width:1280px;
+    height:905px;
+    margin: 0 auto 0 auto;
+    background-image:url('Diploma_Sistema_chico.jpg');
+    top: 9px;
+    left: 10px;
+}
+.titulo{
+    position:absolute;
+    width:560px;
+    height:20px;
+    top: 293px;
+    left: 484px;
+    margin-top: 0px;
+}
+.titulo2{
+    position:absolute;
+    width:560px;
+    height:35px;
+    top: 404px;
+    left: 486px;
+    margin-top: 0px;
+}
+.titulo3{
+    position:absolute;
+    width:560px;
+    height:35px;
+    top: 508px;
+    left: 487px;
+    margin-top: 0px;
+}
+.titulo4{
+    position:absolute;
+    width:560px;
+    height:35px;
+    top: 761px;
+    left: 482px;
+    margin-top: 0px;
+}
+.codigoDiploma
+{
+    position:absolute;
+    width:280px;
+    height:20px;
+    top: 859px;
+    left: 495px;
+    margin-top: 0px;
+}
+    
+    header, footer { display: none; }
+     .nomEstudiante
+ {
+   font-style:normal;
+   font-weight:lighter;
+   font-size:45px;  
+ } 
+.fuente{
+font-size:35px;
+}
+

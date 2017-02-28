@@ -1,0 +1,48 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><link href="styleSheet/StyleSheet.css" rel="Stylesheet" type="text/css" /><title>
+
+</title></head>
+<body>
+
+
+
+       <form method="post" action="Diplomas.aspx?parametro=185938603" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE1NTcwODU1NTkPZBYCAgMPZBYOAgEPDxYCHgRUZXh0BR1Sb2RyaWdvIEFuZHLDqXMgQmFzdWFsdG8gQXJvc2RkAgMPDxYCHwAFJk1UQy1QcmltYXZlcmEgUmlzayBBbsOhbGlzaXMtIzZXUTZIS0kjZGQCBQ8PFgIfAAUYUHJpbWF2ZXJhIFJpc2sgQW7DoWxpc2lzZGQCBw8PFgIfAAUJMS8yOC8yMDE1ZGQCCQ8PFgIfAAUFRW5lcm9kZAILDw8WAh8ABQIxM2RkAg0PDxYCHwAFBDIwMTVkZGRY7kYOKIKZ5ZTKI/6OmCCUbPnQKG2FjGAoi2IdgGlq+w==" />
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="1261B4F5" />
+
+
+
+       <div id="contenedor">
+        <div id="diploma">
+
+                <div class="titulo">
+        Certificamos que el señor:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                     <br />
+                    <br />
+                    <span id="lblNombre" style="font-size: xx-large">Rodrigo Andrés Basualto Aros</span>
+        </div>
+        <div class="codigoDiploma">
+        <span id="lblCodigo" style="font-size: large; font-weight: 700">MTC-Primavera Risk Análisis-#6WQ6HKI#</span>          
+        </div>
+        <div class="titulo2">
+        Ha aprobado el curso de:
+            <br />
+            <span id="lblCurso" style="font-size: xx-large">Primavera Risk Análisis</span>
+        </div>
+        <div class="titulo3">
+            Dictado a partir de el
+        <span id="lblFecha">1/28/2015</span>
+        </div>
+        <div class="titulo4">
+        Santiago, <span id="lblmes">Enero</span> &nbsp;<span id="lbldia">13</span> &nbsp;de  <span id="lblano">2015</span>
+        </div>
+         </div>
+         </div>
+        </form>
+        </body>
+</html>
