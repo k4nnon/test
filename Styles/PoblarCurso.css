@@ -1,0 +1,65 @@
+﻿body 
+{
+    width:100%;
+}
+
+.primaveraBasico
+{
+    color: black;
+    background: green;
+}
+.PrimaveraAvanzado
+{
+    color: black;
+    background: red;
+}
+.primaveraRisk
+{
+    color: black;
+    background: #3f3ffe;
+}
+.titulo
+{
+    width: 550px;
+    color: #336699;
+    font-family: Calibri;
+    font-size: 18px;
+    position: relative;
+    left: 210px;
+    font-family: "Tahoma";
+}
+
+.text
+{
+   color: #336699;
+    position: relative;
+    left: -1px;
+    text-align:right;
+    top: 1.5px;
+}
+.bAgregarNuevo
+{
+   width: 173px;
+}
+.rut
+{
+    color: #336699;
+    position: relative;
+    right: 0px;
+    text-align:right;
+    top: -23px;
+}
+.bCurso
+{
+    position: relative;
+    top: 6px;
+    Height: 20px;
+    Width: 23px;
+}
+.bCalendario
+{
+    position: relative;
+    top: 5px;
+    Height: 22px;
+    Width: 31px;
+}

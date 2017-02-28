@@ -9,22 +9,14 @@ using System.Data;
 
 public partial class ModRut : System.Web.UI.Page
 {
-    static MySqlConnection connection = new MySqlConnection();
-    static MySqlCommand Comando = new MySqlCommand();
-    static MySqlDataAdapter Adaptador = new MySqlDataAdapter();
-    static MySqlDataReader Reader;
-    string connectionString;
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        connectionString = "Server=192.168.1.7; Database=sgsmtc; userid=root; password='s0p0rte'; ";
-        iniciarConexion();
-        DataTable dt = new DataTable();
-        string mysqlConnString = connectionString.ToString();
-        using (MySqlConnection cn = new MySqlConnection(mysqlConnString))
-        {
-            MySqlDataAdapter adp = new MySqlDataAdapter("SELECT id from curso_datos", cn);
 
+        var adp = Namespace.Conexion.adapter("SELECT id from curso_datos");
+        DataTable dt = new DataTable();
+        using (adp)
+        {
             adp.Fill(dt);
             if (dt.Rows.Count > 0)
             {
@@ -56,13 +48,10 @@ public partial class ModRut : System.Web.UI.Page
     }
     public void buscarRut(int id)
     {
-        iniciarConexion();
+        var adp = Namespace.Conexion.adapter("SELECT rut from curso_datos where id=" + id);
         DataTable dt = new DataTable();
-        string mysqlConnString = connectionString.ToString();
-        using (MySqlConnection cn = new MySqlConnection(mysqlConnString))
+        using (adp)
         {
-            MySqlDataAdapter adp = new MySqlDataAdapter("SELECT rut from curso_datos where id="+id, cn);
-
             adp.Fill(dt);
             if (dt.Rows.Count > 0)
             {
@@ -75,23 +64,11 @@ public partial class ModRut : System.Web.UI.Page
             else { lblError.Text = "No hay registros"; lblError.Visible = true; }
         }
     }
-    private void iniciarConexion()
-    {
-        try
-        {
-
-            connection.ConnectionString = connectionString;
-            connection.Open();
-        }
-        catch (Exception ex) { ScriptManager.RegisterStartupScript(this, this.GetType(), "Alert", "alert('Error al conectarse a la base de datos" + ex + "')", true); }
-    }
+   
     public void actualizarRut(string val1, int val2)
     {
-        iniciarConexion();
         string strSQL = "UPDATE curso_datos set rut='" + val1 + "' WHERE id=" + val2 + ";";
-        Comando.CommandText = strSQL;
-        Comando.Connection = connection;
-        Comando.ExecuteNonQuery();
+        Namespace.Conexion.update(strSQL);
     }
     public string Rut(string texto)
     {

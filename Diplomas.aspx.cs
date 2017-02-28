@@ -15,11 +15,7 @@ using Microsoft.Office.Interop.Excel;
 public partial class Pag_Diploma_Diplomas : System.Web.UI.Page
 {
 
-    static MySqlConnection connection = new MySqlConnection();
-    static MySqlCommand Comando = new MySqlCommand();
-    static MySqlDataAdapter Adaptador = new MySqlDataAdapter();
-    static MySqlDataReader Reader;
-    string connectionString;
+   
     string codigo;
     string fecha;
     string codigoAux;
@@ -29,27 +25,25 @@ public partial class Pag_Diploma_Diplomas : System.Web.UI.Page
     
     protected void Page_Load(object sender, EventArgs e)
     {
-        connectionString = "Server=192.168.1.7; Database=sgsmtc; userid=root; password='s0p0rte'; ";
+       
         try
         {
-        iniciarConexion();
-        DateTime now = DateTime.Now;
-        int mes = Convert.ToInt32(now.Month);
-        string ano = now.ToString("yyyy");
-        string dia =Convert.ToString(now.Day);
-        string rut;
-      
-        string code;
-        string me = obtenerNombreMesNumero(mes);
-        me=ConvertirPrimeraLetraEnMayuscula(me);
-        lblmes.Text = me;
-        lblano.Text = ano;
-        lbldia.Text = dia;
-
-        rut = Request.Params["parametro"];
-        code = Request.Params["parametro2"];
-        buscarCliente(rut);
-        buscarRegistro(code);
+            
+            DateTime now = DateTime.Now;
+            int mes = Convert.ToInt32(now.Month);
+            string ano = now.ToString("yyyy");
+            string dia =Convert.ToString(now.Day);
+            string rut;
+            string code;
+            string me = obtenerNombreMesNumero(mes);
+            me=ConvertirPrimeraLetraEnMayuscula(me);
+            lblmes.Text = me;
+            lblano.Text = ano;
+            lbldia.Text = dia;
+            rut = Request.Params["parametro"];
+            code = Request.Params["parametro2"];
+            buscarCliente(rut);
+            buscarRegistro(code);
       
         }
         catch (Exception ex)
@@ -75,23 +69,13 @@ public partial class Pag_Diploma_Diplomas : System.Web.UI.Page
     return str;
     }
 
-    private void iniciarConexion() 
-    {
-        try
-        {
-            connection.ConnectionString = connectionString;
-            connection.Open();
-        }
-        catch (Exception ex) { ScriptManager.RegisterStartupScript(this, this.GetType(), "Alert", "alert('Error al conectarse a la base de datos"+ex+"')", true); }
-    }
+
     public void buscarCliente(string rut)
     {
         try
         {
-            iniciarConexion();
-            Comando.CommandText = "SELECT * FROM curso_cliente WHERE rut='" + rut + "'";
-            Comando.Connection = connection;
-            Reader = Comando.ExecuteReader();
+         
+            var Reader = Namespace.Conexion.reader("SELECT * FROM curso_cliente WHERE rut='" + rut + "'");
             using (Reader)
                 if (Reader.Read())
                 {
@@ -113,10 +97,7 @@ public partial class Pag_Diploma_Diplomas : System.Web.UI.Page
     public void buscarRegistro(string codigo)
     {
         int o = 0;
-        iniciarConexion();
-        Comando.CommandText = "SELECT * FROM curso_registros WHERE codigoA='" + codigo + "'";
-        Comando.Connection = connection;
-        Reader = Comando.ExecuteReader();
+        var Reader = Namespace.Conexion.reader("SELECT * FROM curso_registros WHERE codigoA='" + codigo + "'");
         using (Reader)
             if (Reader.Read())
             {
